@@ -35,10 +35,22 @@
         }
         .logo img { max-height: 50px; }
         
-        /* Simple Page Navigation */
-        nav ul { display: flex; gap: 2rem; }
-        nav a { color: #1d3557; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: color 0.3s; }
-        nav a:hover { color: #e63946; }
+        /* Header Email Button */
+        .header-email-btn {
+            display: inline-block;
+            color: #e63946;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid #e63946;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        .header-email-btn:hover {
+            background: #e63946;
+            color: white;
+        }
 
         /* Hero Section */
         .hero { 
@@ -200,11 +212,7 @@
             <a href="#"><img src="logo.png" alt="loqbol logo"></a>
         </div>
         <nav id="navigation">
-            <ul>
-                <li><a href="#solutions">Solutions</a></li>
-                <li><a href="#benefits">Advantages</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <a href="mailto:info@loqbol.com" class="header-email-btn">info@loqbol.com</a>
         </nav>
     </header>
 
@@ -220,7 +228,7 @@
 
         <!-- Value Proposition -->
         <section class="value-prop">
-            <p>ACCESS TO THE LARGEST SHIPPING NETWORK. AVAILABILITY OF SPACE AND CAPACITY. VISIBILITY AND SECURITY.</p>
+            <p>ACCESS TO THE LARGEST SHIPPING NETWORK. AVAILABILITY OF SPACE. VISIBILITY. INSURANCE AVAILABILITY.</p>
         </section>
 
         <!-- Solutions Grid (Single Page Architecture) -->
@@ -273,7 +281,7 @@
 
         <!-- Contact CTA -->
         <section id="contact" class="contact-cta">
-            <p>Which transit fits your needs?</p>
+            <p>Which lane fits your needs?</p>
             <h2>VIP SHIPPING SERVICE</h2>
             <a href="mailto:info@loqbol.com" class="email-link">info@loqbol.com</a>
         </section>
@@ -281,7 +289,7 @@
 
     <footer>
         <div class="copyright">
-            <p class="copyright-text">&copy; 2026 loqbol. All rights reserved.</p>
+            <p class="copyright-text">&copy; 2017 loqbol. All rights reserved.</p>
         </div>
     </footer>
 </body>
