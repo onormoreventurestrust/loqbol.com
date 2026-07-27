@@ -155,6 +155,14 @@
             color: #0a192f; 
             letter-spacing: 1px;
         }
+        .email-link {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .email-link:hover {
+            text-decoration: underline;
+        }
 
         /* Footer */
         footer { 
@@ -163,15 +171,11 @@
             text-align: center; 
             padding: 3rem 5%; 
         }
-        .social-links { margin-bottom: 1rem; }
-        .social-links a { 
-            color: white; 
-            margin: 0 10px; 
-            font-size: 1.5rem; 
+        .copyright-text { 
+            margin: 0; 
+            font-size: 0.9rem;
             opacity: 0.8;
-            transition: opacity 0.3s;
         }
-        .social-links a:hover { opacity: 1; }
     </style>
 </head>
 <body>
@@ -241,14 +245,14 @@
         </section>
 
         <section class="contact-cta">
-            <p>Which transit fits my needs? Call Today +1 (347) 949-8885</p>
+            <p>Which transit fits my needs? Contact us at <a href="mailto:info@loqbol.com" class="email-link">info@loqbol.com</a></p>
             <h2>VIP SHIPPING SERVICE</h2>
         </section>
     </main>
 
     <footer>
-        <div class="social-links">
-            <p>&copy; 2026 loqbol. All rights reserved.</p>
+        <div class="copyright">
+            <p class="copyright-text">&copy; 2026 loqbol. All rights reserved.</p>
         </div>
     </footer>
 </body>
