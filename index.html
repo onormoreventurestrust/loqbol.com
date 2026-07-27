@@ -7,6 +7,7 @@
     <style>
         /* Base and Reset */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             line-height: 1.6; 
@@ -33,6 +34,11 @@
             z-index: 50; 
         }
         .logo img { max-height: 50px; }
+        
+        /* Simple Page Navigation */
+        nav ul { display: flex; gap: 2rem; }
+        nav a { color: #1d3557; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: color 0.3s; }
+        nav a:hover { color: #e63946; }
 
         /* Hero Section */
         .hero { 
@@ -43,9 +49,15 @@
         }
         .hero h1 { 
             font-size: clamp(2.5rem, 5vw, 4rem); 
-            margin-bottom: 2rem; 
-            letter-spacing: 2px; 
+            margin-bottom: 1.5rem; 
+            letter-spacing: 1px; 
             text-transform: uppercase; 
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            opacity: 0.9;
         }
         .btn-quote { 
             background: #e63946; 
@@ -72,20 +84,21 @@
         }
 
         /* Services Grid */
+        .services-section { padding: 5rem 5%; background: #f8f9fa; }
+        .section-title { text-align: center; color: #0a192f; margin-bottom: 3rem; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
         .services { 
-            padding: 5rem 5%; 
             max-width: 1200px; 
             margin: 0 auto; 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 2rem; 
         }
         .service-item { 
             background: white; 
-            padding: 3rem 2rem; 
-            text-align: center; 
+            padding: 2.5rem 2rem; 
             border-radius: 6px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            border-top: 4px solid #1d3557;
             transition: transform 0.3s ease, box-shadow 0.3s ease; 
         }
         .service-item:hover { 
@@ -93,23 +106,16 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         .service-item h2 { 
-            font-size: 1.1rem; 
-            margin-bottom: 1.5rem; 
+            font-size: 1.2rem; 
+            margin-bottom: 1rem; 
             color: #1d3557; 
             text-transform: uppercase;
-            min-height: 3rem;
         }
-        .btn-service { 
-            display: inline-block; 
-            padding: 0.6rem 1.2rem; 
-            border: 2px solid #1d3557; 
-            color: #1d3557; 
-            font-weight: 600; 
-            border-radius: 4px; 
-            transition: all 0.3s; 
-            font-size: 0.85rem; 
+        .service-item p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
         }
-        .btn-service:hover { background: #1d3557; color: white; }
 
         /* Features & Benefits */
         .benefits { 
@@ -154,14 +160,22 @@
             font-size: clamp(2rem, 4vw, 3rem); 
             color: #0a192f; 
             letter-spacing: 1px;
+            margin-bottom: 2rem;
         }
         .email-link {
+            display: inline-block;
+            font-size: 1.5rem;
             color: #e63946;
             text-decoration: none;
             font-weight: 700;
+            border: 2px solid #e63946;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            transition: all 0.3s;
         }
         .email-link:hover {
-            text-decoration: underline;
+            background: #e63946;
+            color: white;
         }
 
         /* Footer */
@@ -183,56 +197,69 @@
 
     <header>
         <div class="logo">
-            <img src="logo.png" alt="loqbol logo">
+            <a href="#"><img src="logo.png" alt="loqbol logo"></a>
         </div>
         <nav id="navigation">
+            <ul>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#benefits">Advantages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
     <main id="main-content">
+        <!-- Hero Section -->
         <section class="hero">
-            <h1>Freight Services</h1>
+            <h1>Global Freight Solutions</h1>
+            <p>Streamlined logistics and supply chain management engineered for United States importers and exporters.</p>
             <div class="cta-container">
-                <a href="/request-a-quote" class="btn-quote">Request a Quote</a>
+                <a href="mailto:info@loqbol.com" class="btn-quote">Request a Quote</a>
             </div>
         </section>
 
+        <!-- Value Proposition -->
         <section class="value-prop">
             <p>ACCESS TO THE LARGEST SHIPPING NETWORK. AVAILABILITY OF SPACE AND CAPACITY. VISIBILITY AND SECURITY.</p>
         </section>
 
-        <section class="services">
-            <div class="service-item">
-                <h2>Air Freight</h2>
-                <a href="/air-freight" class="btn-service">Learn More</a>
-            </div>
-            <div class="service-item">
-                <h2>Ocean Freight</h2>
-                <a href="/ocean-freight" class="btn-service">Learn More</a>
-            </div>
-            <div class="service-item">
-                <h2>Rail Freight</h2>
-                <a href="/rail-freight" class="btn-service">Learn More</a>
-            </div>
-            <div class="service-item">
-                <h2>Truck Freight</h2>
-                <a href="/truck-freight" class="btn-service">Learn More</a>
-            </div>
-            <div class="service-item">
-                <h2>LCL (Less than Container Load)</h2>
-                <a href="/lcl" class="btn-service">Learn More</a>
-            </div>
-            <div class="service-item">
-                <h2>Customs & Trade Compliance</h2>
-                <a href="/compliance" class="btn-service">Learn More</a>
-            </div>
-            <div class="service-item">
-                <h2>Supply Chain & Logistics</h2>
-                <a href="/supply-chain" class="btn-service">Learn More</a>
+        <!-- Solutions Grid (Single Page Architecture) -->
+        <section id="solutions" class="services-section">
+            <h2 class="section-title">Transit Capabilities</h2>
+            <div class="services">
+                <div class="service-item">
+                    <h2>Air Freight</h2>
+                    <p>Rapid, highly reliable transit solutions designed for time-sensitive, high-value goods entering or exiting US airspace safely and efficiently.</p>
+                </div>
+                <div class="service-item">
+                    <h2>Ocean Freight</h2>
+                    <p>Cost-effective FCL (Full Container Load) shipping across all major global trade lanes to secure maximum capacity for your bulk cargo.</p>
+                </div>
+                <div class="service-item">
+                    <h2>Rail Freight</h2>
+                    <p>Strategic domestic and cross-border rail operations optimized to move heavy, high-volume inventory inland with reduced transportation costs.</p>
+                </div>
+                <div class="service-item">
+                    <h2>Truck Freight</h2>
+                    <p>Flexible, door-to-door ground transport connecting commercial ports directly to distribution centers and final destinations nationwide.</p>
+                </div>
+                <div class="service-item">
+                    <h2>LCL (Less than Container Load)</h2>
+                    <p>Optimized freight consolidation that allows you to ship smaller inventory volumes without absorbing the cost of empty container space.</p>
+                </div>
+                <div class="service-item">
+                    <h2>Customs & Trade Compliance</h2>
+                    <p>Seamless border clearance, tariff management, and document preparation to ensure absolute regulatory adherence and prevent port delays.</p>
+                </div>
+                <div class="service-item">
+                    <h2>Supply Chain & Logistics</h2>
+                    <p>End-to-end operational strategy to streamline your entire inventory lifecycle from the factory floor of origin to the final point of distribution.</p>
+                </div>
             </div>
         </section>
 
-        <section class="benefits">
+        <!-- Features & Benefits -->
+        <section id="benefits" class="benefits">
             <ul>
                 <li>Release burden of effort & time of submitting to multiple agencies.</li>
                 <li>Government documentation taken care of.</li>
@@ -244,9 +271,11 @@
             </ul>
         </section>
 
-        <section class="contact-cta">
-            <p>Which transit fits my needs? Contact us at <a href="mailto:info@loqbol.com" class="email-link">info@loqbol.com</a></p>
+        <!-- Contact CTA -->
+        <section id="contact" class="contact-cta">
+            <p>Which transit fits your needs?</p>
             <h2>VIP SHIPPING SERVICE</h2>
+            <a href="mailto:info@loqbol.com" class="email-link">info@loqbol.com</a>
         </section>
     </main>
 
