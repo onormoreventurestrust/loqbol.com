@@ -95,7 +95,7 @@
             font-size: 0.9rem;
         }
 
-        /* Services Grid */
+        /* Services Grid (Innovative Dark Overlay Cards) */
         .services-section { padding: 5rem 5%; background: #f8f9fa; }
         .section-title { text-align: center; color: #0a192f; margin-bottom: 3rem; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
         .services { 
@@ -106,26 +106,50 @@
             gap: 2rem; 
         }
         .service-item { 
-            background: white; 
-            padding: 2.5rem 2rem; 
-            border-radius: 6px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-            border-top: 4px solid #1d3557;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            position: relative;
+            padding: 3.5rem 2rem; 
+            border-radius: 8px; 
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 280px;
+            background-color: #1d3557; 
+        }
+        /* Dark Gradient Overlay for Maximum Text Contrast */
+        .service-item::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(10,25,47,0.55) 0%, rgba(10,25,47,0.92) 100%);
+            transition: opacity 0.4s ease;
+            z-index: 1;
         }
         .service-item:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-6px); 
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+        .service-item:hover::before {
+            background: linear-gradient(180deg, rgba(10,25,47,0.45) 0%, rgba(10,25,47,0.95) 100%);
+        }
+        .service-item h2, .service-item p {
+            position: relative;
+            z-index: 2;
         }
         .service-item h2 { 
-            font-size: 1.2rem; 
-            margin-bottom: 1rem; 
-            color: #1d3557; 
+            font-size: 1.3rem; 
+            margin-bottom: 0.8rem; 
+            color: #ffffff; 
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .service-item p {
             font-size: 0.95rem;
-            color: #555;
+            color: #e0e6ed;
             line-height: 1.6;
         }
 
@@ -231,35 +255,35 @@
             <p>ACCESS TO THE LARGEST SHIPPING NETWORK. AVAILABILITY OF SPACE AND CAPACITY. VISIBILITY AND SECURITY.</p>
         </section>
 
-        <!-- Solutions Grid (Single Page Architecture) -->
+        <!-- Solutions Grid -->
         <section id="solutions" class="services-section">
             <h2 class="section-title">Transit Capabilities</h2>
             <div class="services">
-                <div class="service-item">
+                <div class="service-item" style="background-image: url('airfreight.jpeg');">
                     <h2>Air Freight</h2>
                     <p>Rapid, highly reliable transit solutions designed for time-sensitive, high-value goods entering or exiting US airspace safely and efficiently.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" style="background-image: url('oceanfreight.png');">
                     <h2>Ocean Freight</h2>
                     <p>Cost-effective FCL (Full Container Load) shipping across all major global trade lanes to secure maximum capacity for your bulk cargo.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" style="background-image: url('railfreight.jpg');">
                     <h2>Rail Freight</h2>
                     <p>Strategic domestic and cross-border rail operations optimized to move heavy, high-volume inventory inland with reduced transportation costs.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" style="background-image: url('truckfreight.jpg');">
                     <h2>Truck Freight</h2>
                     <p>Flexible, door-to-door ground transport connecting commercial ports directly to distribution centers and final destinations nationwide.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" style="background-image: url('lcl.jpg');">
                     <h2>LCL (Less than Container Load)</h2>
                     <p>Optimized freight consolidation that allows you to ship smaller inventory volumes without absorbing the cost of empty container space.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" style="background-image: url('customs.png');">
                     <h2>Customs & Trade Compliance</h2>
                     <p>Seamless border clearance, tariff management, and document preparation to ensure absolute regulatory adherence and prevent port delays.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" style="background-image: url('supplychainlogistics.jpg');">
                     <h2>Supply Chain & Logistics</h2>
                     <p>End-to-end operational strategy to streamline your entire inventory lifecycle from the factory floor of origin to the final point of distribution.</p>
                 </div>
@@ -289,7 +313,7 @@
 
     <footer>
         <div class="copyright">
-            <p class="copyright-text">&copy; 2017 loqbol All rights reserved.</p>
+            <p class="copyright-text">&copy; 2026 loqbol. All rights reserved.</p>
         </div>
     </footer>
 </body>
