@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>loqbol | Global Logistics & Freight Solutions</title>
+    <title>loqbol | Global Logistics & Freight Services</title>
     <style>
         /* Base and Reset */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -105,6 +105,8 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 2rem; 
         }
+        
+        /* Standard Card (Used for Rail Freight) */
         .service-item { 
             position: relative;
             padding: 3.5rem 2rem; 
@@ -120,7 +122,6 @@
             min-height: 280px;
             background-color: #1d3557; 
         }
-        /* Dark Gradient Overlay for Maximum Text Contrast */
         .service-item::before {
             content: "";
             position: absolute;
@@ -151,6 +152,102 @@
             font-size: 0.95rem;
             color: #e0e6ed;
             line-height: 1.6;
+        }
+
+        /* 3D Flip Card Mechanics */
+        .flip-card {
+            background-color: transparent;
+            min-height: 280px; 
+            perspective: 1000px; 
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+            transform-style: preserve-3d;
+            border-radius: 8px;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; 
+            backface-visibility: hidden;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        /* Front of the card */
+        .flip-card-front {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 3.5rem 2rem;
+            background-color: #1d3557;
+        }
+        .flip-card-front::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(10,25,47,0.55) 0%, rgba(10,25,47,0.92) 100%);
+            z-index: 1;
+        }
+        .flip-card-front h2, .flip-card-front p {
+            position: relative;
+            z-index: 2;
+        }
+        .flip-card-front h2 { 
+            font-size: 1.3rem; 
+            margin-bottom: 0.8rem; 
+            color: #ffffff; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .flip-card-front p {
+            font-size: 0.95rem;
+            color: #e0e6ed;
+            line-height: 1.6;
+        }
+        /* Back of the card (The Call to Action) */
+        .flip-card-back {
+            background: #1d3557;
+            border: 2px solid #e63946;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .flip-card-back h3 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+        .flip-card-back p {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #e0e6ed;
+        }
+        .flip-card-back a {
+            color: #e63946;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-size: 1rem;
+        }
+        .flip-card-back a:hover {
+            color: #ffffff;
         }
 
         /* Features & Benefits */
@@ -244,7 +341,7 @@
         <!-- Hero Section -->
         <section class="hero">
             <h1>Global Freight Solutions</h1>
-            <p>Streamlined logistics and supply chain management.</p>
+            <p>Streamlined logistics and supply chain management engineered for United States importers and exporters.</p>
             <div class="cta-container">
                 <a href="mailto:info@loqbol.com" class="btn-quote">Request a Quote</a>
             </div>
@@ -257,36 +354,105 @@
 
         <!-- Solutions Grid -->
         <section id="solutions" class="services-section">
-            <h2 class="section-title">Freight Capabilities</h2>
+            <h2 class="section-title">Transit Capabilities</h2>
             <div class="services">
-                <div class="service-item" style="background-image: url('airfreight.jpeg');">
-                    <h2>Air Freight</h2>
-                    <p>Rapid, highly reliable transit solutions designed for time-sensitive, high-value goods entering or exiting US airspace safely and efficiently.</p>
+                
+                <!-- Air Freight (Flip Card) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('airfreight.jpeg');">
+                            <h2>Air Freight</h2>
+                            <p>Rapid, highly reliable transit solutions designed for time-sensitive, high-value goods entering or exiting US airspace safely and efficiently.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ready to Ship?</h3>
+                            <p>Please email your final packing list, including the total number of pieces, dimensions per piece (L x W x H), and total gross weight. Please specify the units used (e.g., cm/kg or inches/lbs) so we can calculate the accurate chargeable weight for your air freight quote.</p>
+                            <a href="mailto:info@loqbol.com">info@loqbol.com</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-item" style="background-image: url('oceanfreight.png');">
-                    <h2>Ocean Freight</h2>
-                    <p>Cost-effective FCL (Full Container Load) shipping across all major global trade lanes to secure maximum capacity for your bulk cargo.</p>
+
+                <!-- Ocean Freight (Flip Card) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('oceanfreight.png');">
+                            <h2>Ocean Freight</h2>
+                            <p>Cost-effective FCL (Full Container Load) shipping across all major global trade lanes to secure maximum capacity for your bulk cargo.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ready to Ship?</h3>
+                            <p>Please email the origin and destination (including ZIP codes) and the container size needed (e.g., 20ft, 40ft, or 40ft High Cube) for your ocean freight quote.</p>
+                            <a href="mailto:info@loqbol.com">info@loqbol.com</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Rail Freight (Standard Card) -->
                 <div class="service-item" style="background-image: url('railfreight.jpg');">
                     <h2>Rail Freight</h2>
                     <p>Strategic domestic and cross-border rail operations optimized to move heavy, high-volume inventory inland with reduced transportation costs.</p>
                 </div>
-                <div class="service-item" style="background-image: url('truckfreight.jpg');">
-                    <h2>Truck Freight</h2>
-                    <p>Flexible, door-to-door ground transport connecting commercial ports directly to distribution centers and final destinations nationwide.</p>
+
+                <!-- Truck Freight (Flip Card) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('truckfreight.jpg');">
+                            <h2>Truck Freight</h2>
+                            <p>Flexible, door-to-door ground transport connecting commercial ports directly to distribution centers and final destinations nationwide.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ready to Ship?</h3>
+                            <p>Please email the origin and destination ZIP codes (Please specify if residential or commercial), Total piece count and packaging type, (e.g., 6 pallets, 50 boxes), Dimensions per piece (L x W x H), Total gross weight, and if liftgate needed. Please specify the units used (e.g., cm/kg or in/lbs) for your truck quote.</p>
+                            <a href="mailto:info@loqbol.com">info@loqbol.com</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-item" style="background-image: url('lcl.jpg');">
-                    <h2>LCL (Less than Container Load)</h2>
-                    <p>Optimized freight consolidation that allows you to ship smaller inventory volumes without absorbing the cost of empty container space.</p>
+
+                <!-- LCL (Flip Card) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('lcl.jpg');">
+                            <h2>LCL (Less than Container Load)</h2>
+                            <p>Optimized freight consolidation that allows you to ship smaller inventory volumes without absorbing the cost of empty container space.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ready to Ship?</h3>
+                            <p>Please email the origin and destination addresses (including ZIP codes), the total volume in cubic meters (CBM), or the dimensions of each piece, (L x W x H), the total piece count and packaging type (e.g., 50 boxes, 6 pallets) number of boxes/pallets and the dimensions of each piece (Length x Width x Height), and total weight of the cargo. Please specify the units used (e.g., cm/kg or inches/lbs) for your LCL quote.</p>
+                            <a href="mailto:info@loqbol.com">info@loqbol.com</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-item" style="background-image: url('customs.png');">
-                    <h2>Customs & Trade Compliance</h2>
-                    <p>Seamless border clearance, tariff management, and document preparation to ensure absolute regulatory adherence and prevent port delays.</p>
+
+                <!-- Customs (Flip Card) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('customs.png');">
+                            <h2>Customs & Trade Compliance</h2>
+                            <p>Seamless border clearance, tariff management, and document preparation to ensure absolute regulatory adherence and prevent port delays.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ready to Ship?</h3>
+                            <p>Please email the HTS codes for your commodities, along with the estimated commercial value of the shipment for your customs clearance quote.</p>
+                            <a href="mailto:info@loqbol.com">info@loqbol.com</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-item" style="background-image: url('supplychainlogistics.jpg');">
-                    <h2>Supply Chain & Logistics</h2>
-                    <p>End-to-end operational strategy to streamline your entire inventory lifecycle from the factory floor of origin to the final point of distribution.</p>
+
+                <!-- Supply Chain & Logistics (Flip Card) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('supplychainlogistics.jpg');">
+                            <h2>Supply Chain & Logistics</h2>
+                            <p>End-to-end operational strategy to streamline your entire inventory lifecycle from the factory floor of origin to the final point of distribution.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ready to Ship?</h3>
+                            <p>To request a quote, please email your shipment details and any special instructions. Thank you.</p>
+                            <a href="mailto:info@loqbol.com">info@loqbol.com</a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -296,17 +462,17 @@
                 <li>Release burden of effort & time of submitting to multiple agencies.</li>
                 <li>Government documentation taken care of.</li>
                 <li>Insurance documentation taken care of.</li>
-                <li>Route documentation taken care of.</li>
+                <li>Transit documentation taken care of.</li>
                 <li>Credit documentation taken care of.</li>
-                <li>Monitor route activity.</li>
+                <li>Monitor transit activity.</li>
                 <li>Security information.</li>
             </ul>
         </section>
 
         <!-- Contact CTA -->
         <section id="contact" class="contact-cta">
-            <p>Which service fits your need?</p>
-            <h2>Contact for your unique solution now!</h2>
+            <p>Which transit fits your needs?</p>
+            <h2>VIP SHIPPING SERVICE</h2>
             <a href="mailto:info@loqbol.com" class="email-link">info@loqbol.com</a>
         </section>
     </main>
