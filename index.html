@@ -106,54 +106,6 @@
             gap: 2rem; 
         }
         
-        /* Standard Card (Used for Rail Freight) */
-        .service-item { 
-            position: relative;
-            padding: 3.5rem 2rem; 
-            border-radius: 8px; 
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.4s ease, box-shadow 0.4s ease; 
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            min-height: 280px;
-            background-color: #1d3557; 
-        }
-        .service-item::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(10,25,47,0.55) 0%, rgba(10,25,47,0.92) 100%);
-            transition: opacity 0.4s ease;
-            z-index: 1;
-        }
-        .service-item:hover { 
-            transform: translateY(-6px); 
-            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-        }
-        .service-item:hover::before {
-            background: linear-gradient(180deg, rgba(10,25,47,0.45) 0%, rgba(10,25,47,0.95) 100%);
-        }
-        .service-item h2, .service-item p {
-            position: relative;
-            z-index: 2;
-        }
-        .service-item h2 { 
-            font-size: 1.3rem; 
-            margin-bottom: 0.8rem; 
-            color: #ffffff; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .service-item p {
-            font-size: 0.95rem;
-            color: #e0e6ed;
-            line-height: 1.6;
-        }
-
         /* 3D Flip Card Mechanics */
         .flip-card {
             background-color: transparent;
@@ -387,10 +339,19 @@
                     </div>
                 </div>
 
-                <!-- Rail Freight (Standard Card) -->
-                <div class="service-item" style="background-image: url('railfreight.jpg');">
-                    <h2>Rail Freight</h2>
-                    <p>Strategic domestic and cross-border rail operations optimized to move heavy, high-volume inventory inland with reduced transportation costs.</p>
+                <!-- Rail Freight (Flip Card) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: url('railfreight.jpg');">
+                            <h2>Rail Freight</h2>
+                            <p>Strategic domestic and cross-border rail operations optimized to move heavy, high-volume inventory inland with reduced transportation costs.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ready to Ship?</h3>
+                            <p>Please email your origin rail ramp and destination rail ramp, along with the container size and total gross weight for your rail quote.</p>
+                            <a href="mailto:info@loqbol.com">info@loqbol.com</a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Truck Freight (Flip Card) -->
