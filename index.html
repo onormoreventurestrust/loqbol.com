@@ -58,7 +58,7 @@
             color: white; 
             padding: 8rem 5%; 
             text-align: center; 
-            background-image: url('herobanner.jpg');
+            background-image: url('herobanner.jpeg');
             background-size: cover;
             background-position: center;
             overflow: hidden;
@@ -144,6 +144,7 @@
         }
         .flip-card:hover .flip-card-inner {
             transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
         }
         .flip-card-front, .flip-card-back {
             position: absolute;
@@ -164,6 +165,8 @@
             justify-content: flex-end;
             padding: 3.5rem 2rem;
             background-color: #1d3557;
+            transform: rotateY(0deg);
+            -webkit-transform: rotateY(0deg);
         }
         .flip-card-front::before {
             content: "";
@@ -193,7 +196,8 @@
             background: #1d3557;
             border: 2px solid #e63946;
             color: white;
-            transform: rotateY(180deg);
+            transform: rotateY(180deg) scaleX(-1);
+            -webkit-transform: rotateY(180deg) scaleX(-1);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -312,7 +316,6 @@
     </header>
 
     <main id="main-content">
-        <!-- Hero Section -->
         <section class="hero">
             <h1>Global Freight Solutions</h1>
             <p>Streamlined logistics and supply chain</p>
@@ -321,17 +324,14 @@
             </div>
         </section>
 
-        <!-- Value Proposition -->
         <section class="value-prop">
             <p>ACCESS TO THE LARGEST SHIPPING NETWORK. AVAILABILITY OF SPACE AND CAPACITY. VISIBILITY AND SECURITY.</p>
         </section>
 
-        <!-- Solutions Grid -->
         <section id="solutions" class="services-section">
             <h2 class="section-title">ROUTING</h2>
             <div class="services">
                 
-                <!-- Air Freight (Flip Card) -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('airfreight.jpeg');">
@@ -346,7 +346,6 @@
                     </div>
                 </div>
 
-                <!-- Ocean Freight (Flip Card) -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('oceanfreight.png');">
@@ -361,7 +360,6 @@
                     </div>
                 </div>
 
-                <!-- Rail Freight (Flip Card) -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('railfreight.jpg');">
@@ -376,7 +374,6 @@
                     </div>
                 </div>
 
-                <!-- Truck Freight (Flip Card) -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('truckfreight.jpg');">
@@ -391,7 +388,6 @@
                     </div>
                 </div>
 
-                <!-- LCL (Flip Card) -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('lcl.jpg');">
@@ -406,7 +402,6 @@
                     </div>
                 </div>
 
-                <!-- Customs (Flip Card) -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('customs.png');">
@@ -421,7 +416,6 @@
                     </div>
                 </div>
 
-                <!-- Supply Chain & Logistics (Flip Card) -->
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url('supplychainlogistics.jpg');">
@@ -439,7 +433,6 @@
             </div>
         </section>
 
-        <!-- Features & Benefits -->
         <section id="benefits" class="benefits">
             <ul>
                 <li>Release burden of effort & time of submitting to multiple agencies.</li>
@@ -452,9 +445,8 @@
             </ul>
         </section>
 
-        <!-- Contact CTA -->
         <section id="contact" class="contact-cta">
-            <p>WHICH ROUTE FITS YOUR NEEDS?</p>
+            <p>Let's discuss the best option for your business.</p>
             <h2>Email Now</h2>
             <a href="mailto:info@loqbol.com" class="email-link">info@loqbol.com</a>
         </section>
@@ -462,7 +454,7 @@
 
     <footer>
         <div class="copyright">
-            <p class="copyright-text">&copy; 2026 loqbol. All rights reserved.</p>
+            <p class="copyright-text">&copy; 2017 loqbol All rights reserved.</p>
         </div>
     </footer>
 </body>
